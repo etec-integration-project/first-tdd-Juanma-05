@@ -2,10 +2,21 @@
 Juan Mateo Sancho
 En la consola de tu editor realiza los siguientes pasos
 1. Clona el repositorio
-  "git clone https://github.com/etec-integration-project/first-tdd-Juanma-05.git"
+
+  ```
+  git clone https://github.com/etec-integration-project/first-tdd-Juanma-05.git
+  ```
 2. Haz un cd para moverte hasta el directorio del proyecto
-  "cd first-tdd-Juanma-05"
-3.Inicia el contenedor
-  "docker compose up --build"  
-4.Accede a la aplicacion en el navegador
-  Cuando los contenedores ya esten funcionando correctamente accede en tu navegador a la direccion "http://<IP-DE-LA-MAQUINA-VIRTUAL>:3000/ping"  
+  ```
+  cd first-tdd-Juanma-05
+  ```
+  
+3. Inicia el contenedor
+  ```
+  docker compose up --build
+  ```  
+4. Accede a la aplicacion en el navegador
+  Cuando los contenedores ya esten funcionando correctamente accede en tu navegador a la direccion 
+  ```
+  http://localhost:3000/ping
+  ```
