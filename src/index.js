@@ -7,8 +7,9 @@ const app = express()
 
 console.log({
     host: process.env.MYSQLDB_HOST,
-    password: process.env.MYSQLDB_PASSWORD,
-    port: process.env.MYSQLDB_PORT,
+    user:'root',
+    password: process.env.MYSQLDB_ROOT_PASSWORD,
+    port: process.env.MYSQLDB_DOCKER_PORT,
 
 
 
