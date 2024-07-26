@@ -1,0 +1,1 @@
+27/07: Logre hacer la coneccion frontend con backend, te permite registrar los usuario y los envia a la base de datos, pero salta un error de renderizacion que tengo que corregir. Tambien cree el login que tengo que terminar de hacerlo funcionar. 
