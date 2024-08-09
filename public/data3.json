@@ -1,0 +1,22 @@
+[ 
+    {
+        "id":7,
+        "name":"Puma Evopower 4.2 H8 SG",
+        "price":70000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_000_20230806_1313001-2b4ead03481a24829a16913386300452-480-0.webp"
+    },
+
+    {
+        "id":8,
+        "name":"Puma Borussia H8 SG",
+        "price":70000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_000_20230818_1227311-1598f63cf0a5dbebcd16923725512421-480-0.webp"
+    },
+
+    {
+        "id":9,
+        "name":"Canterbury Phoenix Raze SG",
+        "price":75000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/de8f4502-1f4b-427b-80df-7e5aab5d0a141-4fe6647246902731c516839068570418-480-0.webp"
+    }
+]

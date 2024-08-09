@@ -1,0 +1,22 @@
+[ 
+    {
+        "id":4,
+        "name":"Nike Tiempo Legend 9 Club FG",
+        "price":70000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_000_20230913_01004211-f750c3a530dfa2612f16945777955597-480-0.webp"
+    },
+
+    {
+        "id":5,
+        "name":"Nike Phantom GT Elite FG",
+        "price":175000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_000_20230623_1455011-94b7b067c23d9b44aa16875430824224-480-0.webp"
+    },
+
+    {
+        "id":6,
+        "name":"Adidas Predator Edge 1 FG",
+        "price":155000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/69b964f5-c0a9-4ec3-938f-b26dba6f63e61-6e71484403086799a716703810955024-480-0.webp"
+    }
+]

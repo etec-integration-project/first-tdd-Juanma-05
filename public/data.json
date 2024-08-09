@@ -1,0 +1,23 @@
+[ 
+    {
+        "id":1,
+        "name":"Nike Tiempo Legend 8 Elite SG",
+        "price":190000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_000_20230718_1540061-8f70a098c5fe458ef716897057025502-480-0.webp"
+    },
+
+    {
+        "id":2,
+        "name":"Nike Phantom GT2 Elite SG",
+        "price":183000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_005_20230718_1540061-6963297631efbd866416897057229394-480-0.webp"
+    },
+
+    {
+        "id":3,
+        "name":"New Balance Tekela V3+ SG",
+        "price":160000,
+        "img":"https://acdn.mitiendanube.com/stores/001/998/505/products/photoroom_005_20230801_1424381-27b8503021746d83aa16909114397401-480-0.webp"  
+    }
+
+]

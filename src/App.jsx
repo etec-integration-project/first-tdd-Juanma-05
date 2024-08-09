@@ -2,12 +2,12 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dataprovider from './components/context/datacontext';
 import Header from './components/header/header'
-import Body from "./components/body/body"
+// import Body from "./components/body/body"
 import Footer from './components/footer/footer';
-import Login from './components/sesion/sesion.jsx';
+import LoginForm from './components/sesion/sesion.jsx';
 import { Products, Products1, Products2 } from './components/products/products.jsx';
 import { CartContent } from './components/carrito/CartContent';
-import Register from './components/register';
+import Register from './components/sesion/register';
 import Giatalles from './components/header/gia-talles';
 //        instalar la libreria axios para hacer peticiones http 
 //        https://www.youtube.com/watch?v=uPYfPcMtOvI
@@ -25,7 +25,7 @@ function App() {
               path="/"
               element={<>
                 <Header />
-                <Body />
+                <Register />
                 <Footer/>
               </>} />
 
@@ -95,6 +95,8 @@ function App() {
         </Router>
       </Dataprovider>
       
+
+
     </div>
   );
 }
