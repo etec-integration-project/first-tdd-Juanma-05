@@ -2,10 +2,10 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dataprovider from './components/context/datacontext';
 import Header from './components/header/header'
-// import Body from "./components/body/body"
+import Body from "./components/body/body"
 import Footer from './components/footer/footer';
 import LoginForm from './components/sesion/sesion.jsx';
-import { Products, Products1, Products2 } from './components/products/products.jsx';
+import { Products } from './components/products/products.jsx';
 import { CartContent } from './components/carrito/CartContent';
 import Register from './components/sesion/register';
 import Giatalles from './components/header/gia-talles';
@@ -25,7 +25,7 @@ function App() {
               path="/"
               element={<>
                 <Header />
-                <Register />
+                <Body />
                 <Footer/>
               </>} />
 
@@ -70,7 +70,7 @@ function App() {
                 <Footer/>
               </>} />
 
-              <Route
+              {/* <Route
               path="/suelaFG"
               element={<>
                 <Header />
@@ -88,7 +88,7 @@ function App() {
                 <Products2/>
                 </div>
                 <Footer/>
-              </>} />
+              </>} /> */}
 
 
           </Routes>
