@@ -70,25 +70,25 @@ function App() {
                 <Footer/>
               </>} />
 
-              {/* <Route
+               <Route
               path="/suelaFG"
               element={<>
                 <Header />
                 <div className='product-card-container'>
-                <Products1/>
+                <Products/>
                 </div>
                 <Footer/>
               </>} />
 
-              <Route
+              <Route 
               path="/suelaSG"
-              element={<>
-                <Header />
-                <div className='product-card-container'>
-                <Products2/>
-                </div>
-                <Footer/>
-              </>} /> */}
+               element={<>
+                 <Header />
+                 <div className='product-card-container'>
+                 <Products/>
+                 </div>
+                 <Footer/>
+               </>} /> /
 
 
           </Routes>

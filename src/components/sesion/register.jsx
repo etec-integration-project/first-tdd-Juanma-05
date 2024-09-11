@@ -11,9 +11,9 @@ export default function Register() {
     e.preventDefault()
       try {
         await axios.post("http://localhost:3000/register",{email,password})
-        alert("cuenta creada exitosamente")
+        alert("Cuenta creada exitosamente!")
         
-        window.location.href = "http://localhost:3001";
+        window.location.href = "http://localhost:3001/sesion";
 
         
       } catch (error) {
