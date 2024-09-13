@@ -1,0 +1,71 @@
+/* Cargar.css */
+.cargar-container {
+  background: url("../../multimedia/fondo2.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.cargar-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.cargar-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.botoneslogin {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.botoneslogin button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botoneslogin button:hover {
+  background-color: #0056b3;
+}
+
+.botoneslogin a {
+  text-decoration: none;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}

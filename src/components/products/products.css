@@ -1,15 +1,50 @@
-.product-card-container{
+/* products.css */
+
+/* Estilo general para los contenedores de productos */
+.products-container-mixta,
+.products-container-FG,
+.products-container-SG {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 40px;
-    text-align: center;
-    position: relatives;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola línea */
+    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+    gap: 20px; /* Espacio entre los elementos */
+    margin: 20px; /* Espacio alrededor del contenedor */
+    background: url("../../multimedia/fondo2.jpg") no-repeat center center; /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
 }
 
-.card{
-    margin: 50px;
-    padding: 3px;
+/* Estilo para cada tarjeta de producto */
+.card {
+    flex: 1 1 200px; /* Ajusta el tamaño de la tarjeta y permite que crezca o se reduzca */
+    max-width: 250px; /* Establece un ancho máximo para las tarjetas */
+    padding: 15px; /* Espacio dentro de las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra para un mejor efecto visual */
+    border-radius: 8px; /* Redondea las esquinas de las tarjetas */
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efecto de aumento en hover */
+}
+
+.card img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 4px; /* Redondea las esquinas de la imagen */
+}
+
+.card h3 {
+    margin: 10px 0; /* Ajusta el margen superior e inferior */
+    font-size: 18px; /* Tamaño de fuente para el nombre del producto */
+    color: #333; /* Color de texto para el nombre del producto */
+}
+
+.card h4 {
+    margin: 10px 0; /* Ajusta el margen superior e inferior */
+    font-size: 16px; /* Tamaño de fuente para el precio del producto */
+    color: #666; /* Color de texto para el precio del producto */
 }
 
 .card button {
@@ -18,27 +53,14 @@
     padding: 10px;
     color: white;
     background-color: #1bcb7f;
-    text-align: center;
     cursor: pointer;
-    width: 70%;
+    width: 100%; /* Ajusta el botón para ocupar todo el ancho de la tarjeta */
     font-size: 15px;
     margin-top: 10px;
-
-    
+    border-radius: 4px; /* Redondea las esquinas del botón */
+    transition: background-color 0.3s ease; /* Transición suave en el hover */
 }
 
-
-
-.card img{
-    height: 250px;
-    width: 250px;
-}
-
-
-.card h3{
-    margin:10px;
-}
-
-.card h4{
-    margin:10px;
+.card button:hover {
+    background-color: #17a25f; /* Color de fondo en el hover del botón */
 }

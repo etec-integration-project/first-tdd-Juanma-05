@@ -7,6 +7,7 @@ import axios from 'axios';
 export default function Register() {
   const [password, contraseña] =useState("")
   const [email, correoElectronico]=useState("")
+
   const registro = async (e) =>{
     e.preventDefault()
       try {
@@ -35,6 +36,7 @@ export default function Register() {
           <label htmlFor="contrasena">Contraseña</label>
           <input type="password" id="contrasena" name="contrasena" value ={password} onChange={(e) => contraseña (e.target.value)} required />
         </div>
+
 
         <div className ="botoneslogin">
           

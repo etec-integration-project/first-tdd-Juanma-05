@@ -5,10 +5,11 @@ import Header from './components/header/header'
 import Body from "./components/body/body"
 import Footer from './components/footer/footer';
 import LoginForm from './components/sesion/sesion.jsx';
-import { Products } from './components/products/products.jsx';
+import { ProductsSG, ProductsFG, ProductsMixta } from './components/products/products.jsx';
 import { CartContent } from './components/carrito/CartContent';
 import Register from './components/sesion/register';
 import Giatalles from './components/header/gia-talles';
+import Cargar from './components/cargar-producto/cargar-producto.jsx';
 //        instalar la libreria axios para hacer peticiones http 
 //        https://www.youtube.com/watch?v=uPYfPcMtOvI
 //        Minuto 1,01
@@ -46,6 +47,14 @@ function App() {
               </>} />
 
               <Route
+              path="/cargar"
+              element={<>
+                <Header />
+                <Cargar />
+                <Footer/>
+              </>} />
+
+              <Route
               path="/carrito"
               element={<>
                 <Header />
@@ -64,8 +73,8 @@ function App() {
               path="/suelamixta"
               element={<>
                 <Header />
-                <div className='product-card-container'>
-                <Products/>
+                <div className='product-card-container-mixta'>
+                <ProductsMixta/>
                 </div>
                 <Footer/>
               </>} />
@@ -74,8 +83,8 @@ function App() {
               path="/suelaFG"
               element={<>
                 <Header />
-                <div className='product-card-container'>
-                <Products/>
+                <div className='product-card-container-FG'>
+                <ProductsFG/>
                 </div>
                 <Footer/>
               </>} />
@@ -84,8 +93,8 @@ function App() {
               path="/suelaSG"
                element={<>
                  <Header />
-                 <div className='product-card-container'>
-                 <Products/>
+                 <div className='product-card-container-SG'>
+                 <ProductsSG/>
                  </div>
                  <Footer/>
                </>} /> /

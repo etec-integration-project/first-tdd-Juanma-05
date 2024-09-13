@@ -16,10 +16,10 @@ export default function Header(){
             </div>
 
             <div className="barraprincipal">
-                <div className="carrito">
-                    <Link className="link" to="/carrito">
+                <div className="cargar-producto">
+                    <Link className="link" to="/cargar">
                         <img className="logocarrito" src={logocarrito} alt="" />
-                        <li className="carro">Mi carrito</li>
+                        <li className="carro">Cargar Producto</li>
                     </Link>
                 </div>
 
@@ -35,11 +35,11 @@ export default function Header(){
         <section className="seccionsecundaria">
             <div>
                 <ul className="barrasecundaria">
-                <Link className="link" to="/">
+                {/* <Link className="link" to="/">
                     <li className="nav">HOME</li>
-                </Link>
+                </Link> */}
 
-                <li className="nav">QUIENES SOMOS</li>
+                {/* <li className="nav">QUIENES SOMOS</li> */}
 
                 <Link className="link" to="/GuiaTalles">
                 <li className="nav">GIA DE TALLES</li>
