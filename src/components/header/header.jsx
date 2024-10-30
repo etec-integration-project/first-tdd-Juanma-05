@@ -6,6 +6,7 @@ import logosesion from "../../multimedia/inicio sesion.svg"
 
 export default function Header(){
     return <>
+    <body>
         <section id="seccionprincipal">
             <div className="logo-titulo">
             <Link to="/">
@@ -35,12 +36,6 @@ export default function Header(){
         <section className="seccionsecundaria">
             <div>
                 <ul className="barrasecundaria">
-                {/* <Link className="link" to="/">
-                    <li className="nav">HOME</li>
-                </Link> */}
-
-                {/* <li className="nav">QUIENES SOMOS</li> */}
-
                 <Link className="link" to="/GuiaTalles">
                 <li className="nav">GIA DE TALLES</li>
                 </Link>
@@ -49,6 +44,7 @@ export default function Header(){
             </div>
 
         </section>
+        </body>
         
     </>
 }

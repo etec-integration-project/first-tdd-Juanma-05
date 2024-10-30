@@ -8,7 +8,7 @@ import suelasg from "../../multimedia/suela SG.jpg"
 
 export default function Body(){
     return <>
-        
+    <body>
         <section id="fondo">
             <div className="suelas">
                 <Link className="link" to="/suelamixta">
@@ -34,6 +34,7 @@ export default function Body(){
 
             </div>
         </section>
+    </body>
 
         
     </>

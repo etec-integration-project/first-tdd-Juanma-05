@@ -1,16 +1,19 @@
-/* products.css */
-
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url("../../multimedia/fondo2.jpg") no-repeat center center; /* Imagen de fondo */
+  }
 /* Estilo general para los contenedores de productos */
 .products-container-mixta,
 .products-container-FG,
 .products-container-SG {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola línea */
-    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
     gap: 20px; /* Espacio entre los elementos */
-    margin: 20px; /* Espacio alrededor del contenedor */
-    background: url("../../multimedia/fondo2.jpg") no-repeat center center; /* Imagen de fondo */
+    margin: 25px; /* Espacio alrededor del contenedor */
     background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    height: 67vh; /* Asegúrate de que el contenedor tenga suficiente altura */
 }
 
 /* Estilo para cada tarjeta de producto */
@@ -23,6 +26,9 @@
     background-color: #fff; /* Fondo blanco para las tarjetas */
     text-align: center; /* Centra el texto dentro de la tarjeta */
     transition: transform 0.3s ease; /* Transición suave para el efecto de hover */
+    height: 70%;
+    margin: 10vh;
+
 }
 
 .card:hover {
@@ -42,9 +48,9 @@
 }
 
 .card h4 {
-    margin: 10px 0; /* Ajusta el margen superior e inferior */
-    font-size: 16px; /* Tamaño de fuente para el precio del producto */
-    color: #666; /* Color de texto para el precio del producto */
+    margin: 40px 0; /* Ajusta el margen superior e inferior */
+    font-size: 25px; /* Tamaño de fuente para el precio del producto */
+    color: #000000; /* Color de texto para el precio del producto */
 }
 
 .card button {

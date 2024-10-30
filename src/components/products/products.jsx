@@ -10,7 +10,7 @@ export function ProductsMixta() {
     useEffect(() => {
         axios.get('http://localhost:3000/products')
             .then(response => {
-                const filteredProducts = response.data.filter(product => product.suela === 'mixta');
+                const filteredProducts = response.data.filter(product => product.suela === 'MIXTA');
                 setProducts(filteredProducts);
             })
             .catch(error => {
@@ -19,7 +19,8 @@ export function ProductsMixta() {
     }, []);
 
     return (
-        <div className="products-container-mixta">
+        <body>
+            <div className="products-container-mixta">
             {products.map(product => (
                 <div className="card" key={product.id}>
                     <img src={product.url} alt={product.name} />
@@ -29,6 +30,9 @@ export function ProductsMixta() {
                 </div>
             ))}
         </div>
+            
+        </body>
+        
     );
 }
 
@@ -52,6 +56,7 @@ export function ProductsFG() {
     // };
 
     return (
+        <body>
         <div className="products-container-FG">
             {products.map(product => (
                 <div className="card" key={product.id}>
@@ -62,6 +67,8 @@ export function ProductsFG() {
                 </div>
             ))}
         </div>
+        </body>
+
     );
 }
 
@@ -85,6 +92,7 @@ export function ProductsSG() {
     // };
 
     return (
+        <body>
         <div className="products-container-SG">
             {products.map(product => (
                 <div className="card" key={product.id}>
@@ -95,5 +103,7 @@ export function ProductsSG() {
                 </div>
             ))}
         </div>
+        </body>
+
     );
 }

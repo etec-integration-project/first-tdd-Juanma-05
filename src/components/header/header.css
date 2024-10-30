@@ -9,12 +9,13 @@
 
 #seccionprincipal{
     display: flex;
+    padding: 20px 0; /* Aumenta el margen superior e inferior */
     flex-direction: row;
     justify-content: space-between;
     font-family: "Oswald";
     background:#333;
     max-width: 100vw;
-
+    
 
 }
 
@@ -24,6 +25,7 @@
     align-content: center;
     height: 75px;
     margin-right: 2rem;
+    
 }
 
 .logo-titulo{
@@ -101,6 +103,8 @@
     list-style-type: none;
     text-decoration: none;
     max-width: 100vw;
+    padding: 10px 0; /* Aumenta el margen superior e inferior */
+
 
 }
 
