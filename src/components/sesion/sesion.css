@@ -92,3 +92,7 @@ input {
   opacity: 1; /* Inicialmente completamente visible */
   transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transición suave */
 }
+
+.p{
+  margin: 10px;
+}
