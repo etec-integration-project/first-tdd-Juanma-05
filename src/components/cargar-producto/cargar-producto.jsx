@@ -16,7 +16,7 @@ export default function Cargar() {
   const cargar = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/products", { product, price, url, suela });
+      await axios.post("http://localhost:3001/products", { product, price, url, suela });
       setSuccessMessage('Producto creado exitosamente');
 
       // Limpia los campos
@@ -41,10 +41,6 @@ export default function Cargar() {
       // Limpia los campos y borra el mensaje de error después de 5 segundos
       setTimeout(() => {
         setErrorMessage('');
-        producto('');
-        precio('');
-        img('');
-        tiposuela('');
       }, 3000);
     }
   }
