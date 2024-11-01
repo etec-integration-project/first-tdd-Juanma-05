@@ -30,7 +30,16 @@ export default function Header(){
                         <li className="sesion">Iniciar Sesion</li>
                     </Link>
                 </div>
+
+                <div className="carrito">
+                    <Link className="link" to="/carrito">
+                        <img className="logocarrito" src={logocarrito} alt="" />
+                        <li className="carro">Carrito</li>
+                    </Link>
+                </div>
             </div>
+
+            
         </section>
 
         <section className="seccionsecundaria">

@@ -22,10 +22,9 @@
 .barraprincipal{
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-content: space-around;
     height: 75px;
-    margin-right: 2rem;
-    
+    margin-right: 50px;
 }
 
 .logo-titulo{

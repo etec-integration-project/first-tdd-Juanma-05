@@ -28,7 +28,7 @@ body, html {
     background-color: #fff;
     text-align: center;
     transition: transform 0.3s ease;
-    height: 70%;
+    height: 75%;
     margin: 20px;
 }
 
@@ -66,10 +66,6 @@ body, html {
     transition: background-color 0.3s ease; /* Transición suave en el hover */
 }
 
-.card button:hover {
-    background-color: #ff0000; /* Color de fondo en el hover del botón */
-}
-
 .delete-button {
     position: fixed;
     top: 10px;
@@ -85,7 +81,7 @@ body, html {
 }
 
 .delete-button:hover {
-    background-color: #ff4d4d;
+    background-color: #ff0000;
 }
 .delete-icon {
     position: absolute; /* Coloca el ícono en una posición fija dentro de la tarjeta */
@@ -95,10 +91,14 @@ body, html {
     background: none;
     border: none;
     font-size: 20px;
-    background-color: #ff4d4d;
+    background-color: #ff0000;
     border-radius: 10px; /* Redondea las esquinas del botón */
     width: 90px;
     height: 40px;
+}
+
+.delete-icon:hover {
+    background-color: #ff4d4d;
 }
 
 .modal-overlay {
@@ -177,3 +177,22 @@ body, html {
     height: 9vh;
     font-size: 40px;
 }
+
+.add-to-cart-button {
+    background-color: #28a745; /* Verde para resaltar la acción */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;}
+
+.add-to-cart-button:hover {
+    background-color: #218838; /* Oscurece el verde al pasar el mouse */
+}
+
+.add-to-cart-button:active {
+    transform: scale(0.95); /* Reduce el tamaño ligeramente al hacer clic */
+}
+

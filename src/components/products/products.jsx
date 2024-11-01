@@ -250,6 +250,23 @@ export function ProductsSG() {
             });
     };
 
+    const handleAddToCart = (product) => {
+        axios.post('http://localhost:3001/carrito', {
+            id: product.id,
+            product: product.product,
+            price: product.price,
+            url: product.url,
+            suela: product.suela
+        })
+        .then(response => {
+            setSuccessMessage('Producto agregado al carrito');
+            setTimeout(() => setSuccessMessage(''), 3000);
+        })
+        .catch(error => {
+            console.error("There was an error adding the product to the cart!", error);
+        });
+    };
+
 
     return (
         <div>
@@ -273,7 +290,10 @@ export function ProductsSG() {
                         <button className="delete-icon" onClick={() => handleDeleteIconClick(product)}>
                             🗑️
                         </button>
-                    )}
+                        )}
+                        <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>
+                            Añadir al Carrito
+                        </button>
                 </div>
             ))}
 
