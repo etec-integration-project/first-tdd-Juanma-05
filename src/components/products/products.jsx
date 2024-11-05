@@ -9,8 +9,8 @@ export function ProductsMixta() {
     const [showDeleteIcons, setShowDeleteIcons] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
+    const [buttonText, setButtonText] = useState('Eliminar Producto'); // Nuevo estado para el texto del botón
     const navigate = useNavigate();
-
 
     useEffect(() => {
         const fetchProducts = () => {
@@ -32,6 +32,7 @@ export function ProductsMixta() {
 
     const handleDeleteButtonClick = () => {
         setShowDeleteIcons(!showDeleteIcons);
+        setButtonText(showDeleteIcons ? 'Eliminar Producto' : 'Cancelar'); // Cambiar el texto del botón
     };
 
     const handleDeleteIconClick = (product) => {
@@ -40,17 +41,36 @@ export function ProductsMixta() {
 
     const confirmDelete = () => {
         axios.delete('http://localhost:3001/delete', { data: { id: selectedProduct.id } })        
+            .then(response => {
+                setProducts(products.filter(p => p.id !== selectedProduct.id));
+                setSelectedProduct(null);
+                setShowDeleteIcons(false);
+                setSuccessMessage('Producto eliminado exitosamente');
+                setButtonText('Eliminar Producto'); // Resetear el texto del botón
+                setTimeout(() => {
+                    setSuccessMessage('');
+                    navigate("/suelamixta");
+                }, 2000);        
+            })
+            .catch(error => {
+                console.error("There was an error deleting the product!", error);
+            });
+    };
+
+    const handleAddToCart = (product) => {
+        axios.post('http://localhost:3001/carrito', {
+            id: product.id,
+            product: product.product,
+            price: product.price,
+            url: product.url,
+            suela: product.suela
+        })
         .then(response => {
-            setProducts(products.filter(p => p.id !== selectedProduct.id));
-            setSelectedProduct(null);
-            setShowDeleteIcons(false);
-            setSuccessMessage('Producto eliminado exitosamente');
-            setTimeout(() => {
-                setSuccessMessage('')
-                navigate("/suelaSG");
-              }, 3000);        })
+            setSuccessMessage('Producto agregado al carrito');
+            setTimeout(() => setSuccessMessage(''), 2000);
+        })
         .catch(error => {
-            console.error("There was an error deleting the product!", error);
+            console.error("There was an error adding the product to the cart!", error);
         });
     };
 
@@ -62,12 +82,11 @@ export function ProductsMixta() {
                 </div>
             ) : (
                 <button className="delete-button" onClick={handleDeleteButtonClick}>
-                    Eliminar Producto
+                    {buttonText}
                 </button>
             )}
             {successMessage && <div className="success-message">{successMessage}</div>}
-
-            <div className="products-container-mixta">
+            <div className="products-container-SG">
                 {products.map(product => (
                     <div className="card" key={product.id}>
                         <img src={product.url} alt={product.name} />
@@ -78,9 +97,11 @@ export function ProductsMixta() {
                                 🗑️
                             </button>
                         )}
+                        <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>
+                            Añadir al Carrito
+                        </button>
                     </div>
                 ))}
-
                 {selectedProduct && (
                     <div className="modal-overlay">
                         <div className="modal-content">
@@ -99,12 +120,13 @@ export function ProductsMixta() {
     );
 }
 
-
 export function ProductsFG() {
     const [products, setProducts] = useState([]);
     const [showDeleteIcons, setShowDeleteIcons] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
+    const [buttonText, setButtonText] = useState('Eliminar Producto'); // Nuevo estado para el texto del botón
+
     const navigate = useNavigate();
 
 
@@ -128,6 +150,8 @@ export function ProductsFG() {
 
     const handleDeleteButtonClick = () => {
         setShowDeleteIcons(!showDeleteIcons);
+        setButtonText(showDeleteIcons ? 'Eliminar Producto' : 'Cancelar'); // Cambiar el texto del botón
+
     };
 
     const handleDeleteIconClick = (product) => {
@@ -141,15 +165,34 @@ export function ProductsFG() {
                 setSelectedProduct(null);
                 setShowDeleteIcons(false);
                 setSuccessMessage('Producto eliminado exitosamente');
+                setButtonText('Eliminar Producto'); // Resetear el texto del botón
                 setTimeout(() => {
                     setSuccessMessage('')
                     navigate("/suelaSG");
-                  }, 3000);
+                  }, 2000);
             })
             .catch(error => {
                 console.error("There was an error deleting the product!", error);
             });
     };
+
+    const handleAddToCart = (product) => {
+        axios.post('http://localhost:3001/carrito', {
+            id: product.id,
+            product: product.product,
+            price: product.price,
+            url: product.url,
+            suela: product.suela
+        })
+        .then(response => {
+            setSuccessMessage('Producto agregado al carrito');
+            setTimeout(() => setSuccessMessage(''), 2000);
+        })
+        .catch(error => {
+            console.error("There was an error adding the product to the cart!", error);
+        });
+    };
+
 
 
     return (
@@ -160,11 +203,11 @@ export function ProductsFG() {
                 </div>
             ) : (
                 <button className="delete-button" onClick={handleDeleteButtonClick}>
-                    Eliminar Producto
-                </button>
+                    {buttonText}
+                    </button>
             )}
             {successMessage && <div className="success-message">{successMessage}</div>}
-        <div className="products-container-FG">
+        <div className="products-container-SG">
             {products.map(product => (
                 <div className="card" key={product.id}>
                     <img src={product.url} alt={product.name} />
@@ -174,7 +217,10 @@ export function ProductsFG() {
                         <button className="delete-icon" onClick={() => handleDeleteIconClick(product)}>
                             🗑️
                         </button>
-                    )}
+                        )}
+                        <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>
+                            Añadir al Carrito
+                        </button>
                 </div>
             ))}
 
@@ -202,6 +248,8 @@ export function ProductsSG() {
     const [showDeleteIcons, setShowDeleteIcons] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
+    const [buttonText, setButtonText] = useState('Eliminar Producto'); // Nuevo estado para el texto del botón
+
     const navigate = useNavigate();
 
 
@@ -226,6 +274,8 @@ export function ProductsSG() {
 
     const handleDeleteButtonClick = () => {
         setShowDeleteIcons(!showDeleteIcons);
+        setButtonText(showDeleteIcons ? 'Eliminar Producto' : 'Cancelar'); // Cambiar el texto del botón
+
     };
 
     const handleDeleteIconClick = (product) => {
@@ -239,10 +289,12 @@ export function ProductsSG() {
                 setSelectedProduct(null);
                 setShowDeleteIcons(false);
                 setSuccessMessage('Producto eliminado exitosamente');
+                setButtonText('Eliminar Producto'); // Resetear el texto del botón
+
                 setTimeout(() => {
                     setSuccessMessage('')
                     navigate("/suelaSG");
-                  }, 3000);
+                  }, 2000);
             })
             
             .catch(error => {
@@ -260,7 +312,7 @@ export function ProductsSG() {
         })
         .then(response => {
             setSuccessMessage('Producto agregado al carrito');
-            setTimeout(() => setSuccessMessage(''), 3000);
+            setTimeout(() => setSuccessMessage(''), 2000);
         })
         .catch(error => {
             console.error("There was an error adding the product to the cart!", error);
@@ -276,7 +328,7 @@ export function ProductsSG() {
                 </div>
             ) : (
                 <button className="delete-button" onClick={handleDeleteButtonClick}>
-                    Eliminar Producto
+                    {buttonText}
                 </button>
             )}
             {successMessage && <div className="success-message">{successMessage}</div>}

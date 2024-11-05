@@ -1,30 +1,26 @@
-footer {
-    background-color: #333; /* Color de fondo del footer */
-    padding: 15px; /* Espaciado interior del footer */
-    text-align: center; /* Centrar el contenido del footer */
-    position: relative;
+/* Aseguramos que el footer esté siempre al fondo de la pantalla */
+.fixed-footer {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-
-
+    z-index: 100; /* Asegura que el footer esté encima de otros elementos si es necesario */
 }
 
 /* Estilos para los íconos sociales */
 .social-icons img {
-    margin: 0 15px; /* Espacio entre los íconos */
-    text-decoration: none; /* Quitar subrayado de los enlaces */
-}
-
-.social-icons img {
-    width: 45px; /* Tamaño de los íconos */
+    margin: 0 15px;
+    width: 45px;
     height: 45px;
-    border-radius: 50%; /* Hacer que los íconos sean circulares */
-    background-color: #fff; /* Color de fondo de los íconos (puedes personalizarlo) */
-    padding: 5px; /* Espaciado interior de los íconos */
-    transition: transform 0.3s ease-in-out; /* Efecto de escala al pasar el mouse */
-
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .social-icons img:hover {
-    transform: scale(1.2); /* Escalar los íconos al pasar el mouse */
+    transform: scale(1.2);
 }

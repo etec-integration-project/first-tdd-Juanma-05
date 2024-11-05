@@ -6,13 +6,10 @@ import Body from "./components/body/body"
 import Footer from './components/footer/footer';
 import LoginForm from './components/sesion/sesion.jsx';
 import { ProductsSG, ProductsFG, ProductsMixta } from './components/products/products.jsx';
-import { CartContent } from './components/carrito/CartContent';
+import { Carrito } from './components/carrito/Carrito.jsx';
 import Register from './components/sesion/register';
 import Giatalles from './components/header/gia-talles';
 import Cargar from './components/cargar-producto/cargar-producto.jsx';
-//        instalar la libreria axios para hacer peticiones http 
-//        https://www.youtube.com/watch?v=uPYfPcMtOvI
-//        Minuto 1,01
 
 function App() {
   return (
@@ -58,7 +55,7 @@ function App() {
               path="/carrito"
               element={<>
                 <Header />
-                <CartContent/>
+                <Carrito/>
                 <Footer/>
               </>} />
 

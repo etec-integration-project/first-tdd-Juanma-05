@@ -43,13 +43,12 @@ body, html {
 }
 
 .card h3 {
-    margin: 10px 0; /* Ajusta el margen superior e inferior */
     font-size: 25px; /* Tamaño de fuente para el nombre del producto */
     color: #000000; /* Color de texto para el nombre del producto */
 }
 
 .card h4 {
-    margin: 40px 0; /* Ajusta el margen superior e inferior */
+    margin: 25px 0; /* Ajusta el margen superior e inferior */
     font-size: 25px; /* Tamaño de fuente para el precio del producto */
     color: #000000; /* Color de texto para el precio del producto */
 }
