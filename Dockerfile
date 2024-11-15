@@ -20,7 +20,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 
 # Copiar la configuración de nginx
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+# COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Exponer el puerto 80
 EXPOSE 80
