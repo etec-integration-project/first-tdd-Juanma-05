@@ -8,7 +8,6 @@ import LoginForm from './components/sesion/sesion.jsx';
 import { ProductsSG, ProductsFG, ProductsMixta } from './components/products/products.jsx';
 import { Carrito } from './components/carrito/Carrito.jsx';
 import Register from './components/sesion/register';
-import Giatalles from './components/header/gia-talles';
 import Cargar from './components/cargar-producto/cargar-producto.jsx';
 
 function App() {
@@ -56,14 +55,6 @@ function App() {
               element={<>
                 <Header />
                 <Carrito/>
-                <Footer/>
-              </>} />
-
-              <Route
-              path="/GuiaTalles"
-              element={<>
-                <Header />
-                <Giatalles/>
                 <Footer/>
               </>} />
               <Route
