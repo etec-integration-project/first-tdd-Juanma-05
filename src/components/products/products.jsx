@@ -14,7 +14,7 @@ export function ProductsMixta() {
 
     useEffect(() => {
         const fetchProducts = () => {
-            axios.get('http://localhost:3001/products')
+            axios.get('/api/products')
                 .then(response => {
                     const filteredProducts = response.data.filter(product => product.suela === 'MIXTA');
                     setProducts(filteredProducts);
@@ -40,7 +40,7 @@ export function ProductsMixta() {
     };
 
     const confirmDelete = () => {
-        axios.delete('http://localhost:3001/delete', { data: { id: selectedProduct.id } })        
+        axios.delete('/api/delete', { data: { id: selectedProduct.id } })        
             .then(response => {
                 setProducts(products.filter(p => p.id !== selectedProduct.id));
                 setSelectedProduct(null);
@@ -58,7 +58,7 @@ export function ProductsMixta() {
     };
 
     const handleAddToCart = (product) => {
-        axios.post('http://localhost:3001/carrito', {
+        axios.post('/api/carrito', {
             id: product.id,
             product: product.product,
             price: product.price,
@@ -132,7 +132,7 @@ export function ProductsFG() {
 
     useEffect(() => {
         const fetchProducts = () => {
-            axios.get('http://localhost:3001/products')
+            axios.get('/api/products')
                 .then(response => {
                     const filteredProducts = response.data.filter(product => product.suela === 'FG');
                     setProducts(filteredProducts);
@@ -159,7 +159,7 @@ export function ProductsFG() {
     };
 
     const confirmDelete = () => {
-        axios.delete('http://localhost:3001/delete', { data: { id: selectedProduct.id } })
+        axios.delete('/api/delete', { data: { id: selectedProduct.id } })
         .then(response => {
                 setProducts(products.filter(p => p.id !== selectedProduct.id));
                 setSelectedProduct(null);
@@ -177,7 +177,7 @@ export function ProductsFG() {
     };
 
     const handleAddToCart = (product) => {
-        axios.post('http://localhost:3001/carrito', {
+        axios.post('/api/carrito', {
             id: product.id,
             product: product.product,
             price: product.price,
@@ -256,7 +256,7 @@ export function ProductsSG() {
 
     useEffect(() => {
         const fetchProducts = () => {
-            axios.get('http://localhost:3001/products')
+            axios.get('/api/products')
                 .then(response => {
                     const filteredProducts = response.data.filter(product => product.suela === 'SG');
                     setProducts(filteredProducts);
@@ -283,7 +283,7 @@ export function ProductsSG() {
     };
 
     const confirmDelete = () => {
-        axios.delete('http://localhost:3001/delete', { data: { id: selectedProduct.id } })
+        axios.delete('/api/delete', { data: { id: selectedProduct.id } })
         .then(response => {
                 setProducts(products.filter(p => p.id !== selectedProduct.id));
                 setSelectedProduct(null);
@@ -303,7 +303,7 @@ export function ProductsSG() {
     };
 
     const handleAddToCart = (product) => {
-        axios.post('http://localhost:3001/carrito', {
+        axios.post('/api/carrito', {
             id: product.id,
             product: product.product,
             price: product.price,

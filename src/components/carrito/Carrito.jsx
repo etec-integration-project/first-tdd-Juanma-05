@@ -12,7 +12,7 @@ export function Carrito() {
 
     useEffect(() => {
         const fetchProducts = () => {
-            axios.get('http://localhost:3001/carrito')
+            axios.get('/api/carrito')
                 .then(response => {
                     setProducts(response.data);
                 })
@@ -36,7 +36,7 @@ export function Carrito() {
     };
 
     const confirmDelete = () => {
-        axios.delete('http://localhost:3001/deleteCarrito', { data: { id: selectedProduct.id } })        
+        axios.delete('/api/deleteCarrito', { data: { id: selectedProduct.id } })        
         .then(response => {
             setProducts(products.filter(p => p.id !== selectedProduct.id));
             setSelectedProduct(null);

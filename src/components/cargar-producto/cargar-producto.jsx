@@ -16,7 +16,7 @@ export default function Cargar() {
   const cargar = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/products", { product, price, url, suela });
+      await axios.post("/api/products", { product, price, url, suela });
       setSuccessMessage('Producto creado exitosamente');
 
       // Limpia los campos

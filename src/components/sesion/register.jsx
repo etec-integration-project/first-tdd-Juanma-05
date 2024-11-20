@@ -13,7 +13,7 @@ export default function Register() {
   const registro = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/register", { email, password });
+      await axios.post("/api/register", { email, password });
 
       setSuccessMessage('Usuario registrado correctamente');
 
