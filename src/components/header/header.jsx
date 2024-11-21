@@ -28,12 +28,15 @@ export default function Header() {
       </div>
 
       <div className="barraprincipal">
-        <div className="cargar-producto">
-          <Link className="link" to="/cargar">
-            <img className="logocarrito" src={logocarrito} alt="" />
-            <li className="carro">Cargar Producto</li>
-          </Link>
-        </div>
+        {/* Solo mostrar el botón "Cargar Producto" si el usuario es admin */}
+        {userEmail === 'admin@admin' && (
+          <div className="cargar-producto">
+            <Link className="link" to="/cargar">
+              <img className="logocarrito" src={logocarrito} alt="" />
+              <li className="carro">Cargar Producto</li>
+            </Link>
+          </div>
+        )}
 
         {/* Condición para mostrar el ícono de sesión o el correo con opción de cerrar sesión */}
         {userEmail ? (
