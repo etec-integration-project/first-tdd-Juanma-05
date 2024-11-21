@@ -11,51 +11,48 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState(''); 
   const navigate = useNavigate();
 
-
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("/api/login", { email, password });
+        const response = await axios.post("api/login", { email, password });
 
         // Si el inicio de sesión es exitoso
         if (response.status === 200) {
             setSuccessMessage('Inicio de sesión exitoso');
             setErrorMessage(''); // Borra cualquier mensaje de error
 
+            // Almacena el correo en el localStorage
+            localStorage.setItem('userEmail', email);
+
             // Limpia los campos
             setEmail('');
             setPassword('');
 
             setTimeout(() => {
-                navigate("/");
+                navigate("/"); // Redirige a la página principal
             }, 3000);
         }
     } catch (error) {
         if (error.response) {
             // Código 404: Correo electrónico no registrado
             if (error.response.status === 404) {
-              setErrorMessage(error.response.data.error); // Muestra el mensaje del backend
-                setEmail('');
-                setPassword('');
-
-
+              setErrorMessage(error.response.data.error);
+              setEmail('');
+              setPassword('');
             }
             // Código 401: Contraseña incorrecta
             else if (error.response.status === 401) {
-                setErrorMessage(error.response.data.error); // Muestra el mensaje del backend
+                setErrorMessage(error.response.data.error);
                 setPassword('');
-
             }
             // Otros errores de inicio de sesión
             else {
                 setErrorMessage("Error en el inicio de sesión");
-                setSuccessMessage(''); // Limpia cualquier mensaje de éxito
+                setSuccessMessage('');
             }
         } else {
-            // Si no hay respuesta del servidor, muestra un error genérico
             setErrorMessage("Error en el inicio de sesión");
-            setSuccessMessage(''); // Limpia cualquier mensaje de éxito
+            setSuccessMessage('');
         }
 
         // Limpia los mensajes después de 3 segundos

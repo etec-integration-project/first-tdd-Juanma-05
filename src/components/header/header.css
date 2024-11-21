@@ -99,31 +99,20 @@
     text-decoration: none;
 }
 
-/* .barrasecundaria{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background: rgb(186, 200, 235);
-    list-style-type: none;
-    text-decoration: none;
-    max-width: 100vw;
-    padding: 2px 0;
-}
-
-.nav{
-    margin:1rem;
-    font-family: 'Oswald';
-}
-
-.talles{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 3rem;
-
-}
-.talles1{
-    height: 888px;
-    width: 550px;
-} */
-
+/* Estilo para el botón de cerrar sesión */
+.logout-menu button {
+    background-color: red;  /* Fondo rojo */
+    color: white;  /* Texto blanco */
+    border: none;  /* Sin borde */
+    border-radius: 5px;  /* Bordes redondeados */
+    margin-top: 5px;
+    padding: 3px 7%;  /* Padding (10px en vertical y 20px en horizontal) */
+    cursor: pointer;  /* Cambia el cursor al pasar el ratón por encima */
+    font-size: 13px;  /* Tamaño de la fuente */
+    transition: background-color 0.3s ease;  /* Efecto de transición al pasar el ratón */
+  }
+  
+  .logout-menu button:hover {
+    background-color: darkred;  /* Cambia el fondo cuando el botón está en hover */
+  }
+  
