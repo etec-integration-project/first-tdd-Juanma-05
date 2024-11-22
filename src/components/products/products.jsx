@@ -58,12 +58,21 @@ export function ProductsMixta() {
     };
 
     const handleAddToCart = (product) => {
+        const userEmail = localStorage.getItem('userEmail'); // Obtener el email del usuario
+    
+        if (!userEmail) {
+            setSuccessMessage('Por favor, inicie sesión para agregar productos al carrito');
+            setTimeout(() => setSuccessMessage(''), 2000);
+            return;
+        }
+    
         axios.post('/api/carrito', {
             id: product.id,
             product: product.product,
             price: product.price,
             url: product.url,
-            suela: product.suela
+            suela: product.suela,
+            user: userEmail // Agregar el email del usuario
         })
         .then(response => {
             setSuccessMessage('Producto agregado al carrito');
@@ -73,6 +82,7 @@ export function ProductsMixta() {
             console.error("There was an error adding the product to the cart!", error);
         });
     };
+    
 
     return (
         <div>

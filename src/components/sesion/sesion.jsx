@@ -14,7 +14,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("api/login", { email, password });
+        const response = await axios.post("/api/login", { email, password });
 
         // Si el inicio de sesión es exitoso
         if (response.status === 200) {

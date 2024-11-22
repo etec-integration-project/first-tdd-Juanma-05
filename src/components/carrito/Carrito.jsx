@@ -12,7 +12,16 @@ export function Carrito() {
 
     useEffect(() => {
         const fetchProducts = () => {
-            axios.get('/api/carrito')
+            const userEmail = localStorage.getItem('userEmail'); // Obtener el email del usuario logueado
+            if (!userEmail) {
+                setSuccessMessage('Por favor, inicie sesión para ver su carrito');
+                setTimeout(() => {
+                    navigate('/login');
+                }, 2000);
+                return;
+            }
+
+            axios.get('/api/carrito', { params: { user: userEmail } }) // Enviar el email como parámetro
                 .then(response => {
                     setProducts(response.data);
                 })
@@ -25,7 +34,7 @@ export function Carrito() {
         const intervalId = setInterval(fetchProducts, 10000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [navigate]);
 
     const handleDeleteButtonClick = () => {
         setShowDeleteIcons(!showDeleteIcons);
@@ -36,27 +45,27 @@ export function Carrito() {
     };
 
     const confirmDelete = () => {
-        axios.delete('/api/deleteCarrito', { data: { id: selectedProduct.id } })        
-        .then(response => {
-            setProducts(products.filter(p => p.id !== selectedProduct.id));
-            setSelectedProduct(null);
-            setShowDeleteIcons(false);
-            setSuccessMessage('Producto eliminado exitosamente');
-            setTimeout(() => {
-                setSuccessMessage('');
-                navigate("/carrito");
-            }, 3000);
-        })
-        .catch(error => {
-            console.error("There was an error deleting the product!", error);
-        });
+        axios.delete('/api/deleteCarrito', { data: { id: selectedProduct.id } })
+            .then(response => {
+                setProducts(products.filter(p => p.id !== selectedProduct.id));
+                setSelectedProduct(null);
+                setShowDeleteIcons(false);
+                setSuccessMessage('Producto eliminado exitosamente');
+                setTimeout(() => {
+                    setSuccessMessage('');
+                    navigate("/carrito");
+                }, 3000);
+            })
+            .catch(error => {
+                console.error("There was an error deleting the product!", error);
+            });
     };
 
     return (
         <div>
             {products.length === 0 ? (
                 <div className="no-products-message">
-                    El carrito esta vacio
+                    El carrito está vacío
                 </div>
             ) : (
                 <button className="delete-button" onClick={handleDeleteButtonClick}>
